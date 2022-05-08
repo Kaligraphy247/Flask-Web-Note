@@ -1,0 +1,19 @@
+pipenv install flask gunicorn
+
+touch Profile
+    web: gunicorn wsgi:app
+
+touch runtime.txt
+    python-3.10.4
+
+touch wsgi.py
+    from website import create_app
+
+    app = create_app()
+
+    if __name__ == '__main__':
+        app.run(debug=True)
+
+
+Normal git stuff
+create app from heroku
