@@ -1,0 +1,9 @@
+{% if boolean == True %}
+Yes it is True
+
+{% elif boolean == 'neither' %}
+just emoji for elif == neither 😥
+
+{% else %}
+No it is not true 😥
+{% endif %}
