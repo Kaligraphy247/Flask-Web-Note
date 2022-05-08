@@ -38,6 +38,13 @@ def view_notes():
     return render_template(template_name_or_list="note_lists.html", user=current_user)
 
 
+@views.route('/note-list/<int:id>', methods=["GET", "POST"]) # methods is optional,since get is default
+def edit_notes():
+    if request.method == "GET":
+        note = request.form.get('note')
+    return render_template(template_name_or_list="note_lists.html", user=current_user)
+
+
 @views.route('/delete-note', methods=['POST'])
 def delete_note():
     note = json.loads(request.data)
