@@ -3,15 +3,19 @@
 
 {% block content %}
 <h1 align="center">Notes</h1>
+{% if user.notes|length == 0 %}
+<p>No notes here!</p>
+{% else %}
+{% for note in user.notes %}
 <ul class="list-group list-group-flush" id="notes">
-    {% for note in user.notes %}
     <li class="list-group-item">{{ note.data }}
         <button type="button" class="close" onClick="deleteNote({{ note.id }})">
             <span aria-hidden="true">&times;</span>
         </button>
-        <button type="button" class="btn btn-success">Edit</button>
+        <!-- <button type="button" class="btn btn-success">Edit</button> -->
     </li>
     {% endfor %}
+    {% endif %}
 </ul>
 
 {% endblock content %}
