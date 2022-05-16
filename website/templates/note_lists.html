@@ -3,6 +3,8 @@
 
 {% block content %}
 <h1 align="center">Notes</h1>
+<h2>Here are your notes, {{ user.first_name.capitalize() }}</h2>
+
 {% if user.notes|length == 0 %}
 <p>No notes here!</p>
 {% else %}

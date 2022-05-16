@@ -6,7 +6,7 @@ class Note(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     data = db.Column(db.String(10000))
     date_time = db.Column(db.DateTime(timezone=True), default=func.now())
-    # foreign key always refences a acoulmn of another database
+    # foreign key always refrences a column of another database
     # this is a one to many relationship, i.e. one object with may children.
     # user is also the same as User. user is its representation in SQL
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
